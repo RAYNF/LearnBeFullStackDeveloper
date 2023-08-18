@@ -58,8 +58,12 @@ $routes->set404Override();
 
 //-----------------------------------------------------------------
 
-$routes->get('/', 'Pages::index');
-$routes->get('/pages/about','Pages::about');
+$routes->get('/', 'PagesController::index');
+$routes->get('/pages/about','PagesController::about');
+$routes->get('/pages/contact','PagesController::contact');
+
+// komik
+$routes->get('/komik/index','KomikController::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
