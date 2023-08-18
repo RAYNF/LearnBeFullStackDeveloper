@@ -31,10 +31,35 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
+//1. latihan routing
+//-------------------------------------------------------
 //harus didefinisikan nama controler/method nya 
-$routes->get('/', 'Home::index');
-$routes->get('/home/oke', 'Home::oke');
+// $routes->get('/', 'Home::index');
 
+// $routes->get('/home/oke', 'Home::oke');
+
+// $routes->get('/coba', 'Coba::index');
+// $routes->get('/coba/about', 'Coba::about');
+
+//membuat anonymous fungsi agar langsung di eksekusi
+// $routes->get('/coba',function(){
+//     echo "anonymous";
+// });
+
+//mengirimkan data sebagai parameter
+// $routes->get('/coba/about', 'Coba::about');
+
+//place holder(apapun yang diketikan user akan ditangkap semua)
+//pada controler about akan menangkap nilai pertama dari place holder
+// $routes->get('/coba/(:any)', 'Coba::about/$1');
+
+//kalau ada akses ke user, arahkan namespace admin controller user method index
+// $routes->get('/user', 'Admin\user::index');
+
+//-----------------------------------------------------------------
+
+$routes->get('/', 'Pages::index');
+$routes->get('/pages/about','Pages::about');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
