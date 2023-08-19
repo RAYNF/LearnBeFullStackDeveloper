@@ -1,12 +1,14 @@
+<!-- gunakan template -->
 <?php echo $this->extend('layout/template');?>
 
+<!-- batas content -->
 <?php echo $this->section('content');?>
 
 <div class="container">
     <div class="row">
         <div class="col">
             <h1 class="mt-2">Daftar Komik</h1>
-        <table class="table">
+  <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -21,7 +23,7 @@
       <td><img src="/img/flutter.png" alt="" class="sampul"></td>
       <td>Naruto</td>
       <td>
-        <a href="#" class="btn btn-succes">Detail</a>
+        <a href="#" class="btn btn-success">Detail</a>
       </td>
     </tr>
    
