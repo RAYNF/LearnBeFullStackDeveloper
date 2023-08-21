@@ -57,5 +57,10 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
         $this->nama = "bagas";
+        //cukup tulis sekalai pada basecontroller, semua controller bisa pakai 
+        // $this->KomikModel = new \App\Models\KomikModel();
+
+        //jalankan session 
+        session();
     }
 }

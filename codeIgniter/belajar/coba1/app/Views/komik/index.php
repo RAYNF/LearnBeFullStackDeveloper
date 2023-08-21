@@ -7,7 +7,17 @@
 <div class="container">
     <div class="row">
         <div class="col">
+          <a href="/komik/create" class="btn btn-primary mt-3">Tambah Data Komik</a>
             <h1 class="mt-2">Daftar Komik</h1>
+
+            <!-- kalau sudah berhasi menambahkan data -->
+            <?php if(session()->getFlashdata('pesan')): ?>
+              <!-- jika ada session flashdata bernama pesan maka-->
+              <div class="alert alert-success" role="alert">
+              <?php echo session()->getFlashdata('pesan');?>
+              </div>
+            <?php endif?>
+
   <table class="table">
   <thead>
     <tr>
@@ -18,15 +28,18 @@
     </tr>
   </thead>
   <tbody>
+  <?php $i = 1;?>
+    <?php foreach ($komik as $k) :?>
     <tr>
-      <th scope="row">1</th>
-      <td><img src="/img/flutter.png" alt="" class="sampul"></td>
-      <td>Naruto</td>
+      <th scope="row"> <?php echo $i++;?></th>
+      <td><img src="/img/<?php echo $k['sampul'];?>" alt="" class="sampul"></td>
+      <td><?php echo $k['judul'];?></td>
       <td>
-        <a href="#" class="btn btn-success">Detail</a>
+        <a href="/komik/<?php echo $k['slug'];?>" class="btn btn-success">Detail</a>
       </td>
     </tr>
-   
+  
+   <?php endforeach?>
   </tbody>
 </table>
         </div>

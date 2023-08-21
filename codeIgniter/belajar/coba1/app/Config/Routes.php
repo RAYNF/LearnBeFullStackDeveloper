@@ -62,8 +62,20 @@ $routes->get('/', 'PagesController::index');
 $routes->get('/pages/about','PagesController::about');
 $routes->get('/pages/contact','PagesController::contact');
 
-// komik
+// komik beranda
 $routes->get('/komik/index','KomikController::index');
+//komik create form
+$routes->get('/komik/create','KomikController::create');
+
+//komik save
+// karena di form menggunakan method post, maka route nya mengikuti
+$routes->post('/komik/save','KomikController::save');
+
+//jika ada user yang mengakses komik / apapun, kirimkan ke controller komik method detail dan mengirimkan sengmen
+$routes->get('/komik/(:segment)','KomikController::detail/$1');
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
