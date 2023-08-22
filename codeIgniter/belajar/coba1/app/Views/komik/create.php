@@ -9,7 +9,7 @@
         <div class="col-8">
 
             <h2 class="my-3">Form Tambah Data Komik</h2>
-       
+            <?php echo $validation->listErrors()?>
           
            
  <form action="/komik/save" method="post">

@@ -98,6 +98,7 @@ class KomikController extends BaseController
             //kembalikan ke halaman form 
             //kalau pake redirect kita bisa chaining dengan methode input, validasi juga di kirim ke session
             return redirect()->to('/komik/create')->withInput()->with('validation',$validation);
+            
         }
 
 
