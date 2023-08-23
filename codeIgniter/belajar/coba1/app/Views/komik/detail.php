@@ -19,8 +19,17 @@
         <p class="card-text"><b>Penulis : </b><?php echo $komik['penulis'];?> </p>
         <p class="card-text"><small class="text-body-secondary"><b>Penerbit :</b><?php echo $komik['penerbit'];?>  </small></p>
 
-        <a href="" class="btn btn-warning">Edit</a>
-        <a href="" class="btn btn-danger">Delete</a>
+        <a href="/komik/edit/<?php echo $komik['slug'];?>" class="btn btn-warning">Edit</a>
+
+        <!-- hapus yang lebih aman dengan teknik http -->
+        <form action="/komik/<?php echo $komik['id'];?>" method="post" class="d-inline">
+        <?php echo csrf_field();?>
+        <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin');">Delete</button>
+        </form>
+
+        <!-- hapus metode lama -->
+        <!-- <a href="/komik/delete/<?php //echo $komik['id'];?>" class="btn btn-danger">Delete</a> -->
 
         <br><br>
         <a href="/komik/index">Kembali ke daftar komik</a>

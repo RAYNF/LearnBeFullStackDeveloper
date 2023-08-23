@@ -71,8 +71,20 @@ $routes->get('/komik/create','KomikController::create');
 // karena di form menggunakan method post, maka route nya mengikuti
 $routes->post('/komik/save','KomikController::save');
 
+//komik delete metode lama
+$routes->get('/komik/delete/(:segment)','KomikController::delete/$1');
+
+//komik delete metode http agar aman 
+$routes->delete('/komik/(:num)','KomikController::delete/$1');
+
+//komik edit ke halaman form
+$routes->get('/komik/edit/(:segment)','KomikController::edit/$1');
+
+//komik edit proses
+$routes->post('/komik/update/(:segment)','KomikController::update/$1');
+
 //jika ada user yang mengakses komik / apapun, kirimkan ke controller komik method detail dan mengirimkan sengmen
-$routes->get('/komik/(:segment)','KomikController::detail/$1');
+$routes->get('/komik/(:any)','KomikController::detail/$1');
 
 
 
