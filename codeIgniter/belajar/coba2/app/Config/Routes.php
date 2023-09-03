@@ -19,9 +19,17 @@ $routes->get('/komik/create','KomikController::create');
 //komik save
 $routes->post('/komik/save','KomikController::save');
 
+//komik hapus
+$routes->delete('/komik/(:num)','KomikController::delete/$1');
+
+//komik ke halaman edit
+$routes->get('/komik/edit/(:segment)','KomikController::edit/$1');
+
+//komik proses update
+$routes->post('/komik/update/(:segment)','KomikController::update/$1');
+
 //komik detail
 $routes->get('/komik/(:any)','KomikController::detail/$1');
 
-//komik hapus
-$routes->delete('/komik/(:num)','KomikController::delete/$1');
+
 

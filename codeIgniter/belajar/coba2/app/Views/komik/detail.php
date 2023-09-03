@@ -10,14 +10,16 @@
     <p><?php echo $komik['penulis']?></p>
     <p><?php echo $komik['penerbit']?></p>
 
-    <a href="#">Edit</a>
+    <a href="/komik/edit/<?php echo $komik['slug'];?>" class="btn btn-warning">Edit</a>
     
     <!-- teknik hapus yang lebih aman dengan http -->
-    <form action="/komik/<?php echo $komik['id'];?>" method="post"></form>
+    <form action="/komik/<?php echo $komik['id'];?>" method="post">
     <?php echo csrf_field();?>
-    <input type="hidden" name="_method" value="DELETE" >
-    <button type="submit" onclick="return confirm('apakah yakin ');" >Delete</button>
-    </form>
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" onclick="return confirm('apakah anda yakin');">DELETE</button>
 
+    </form>
+    <br>
+    <br>
     <a href="/">Kembali</a>
 <?php echo $this->endSection();?>
