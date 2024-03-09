@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- react locally -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- compiler -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- pakai react locally -->
+    <script type="text/jsx">
+      const container  = document.getElementById('root')
+      const root = ReactDOM.createRoot(container)
+      root.render(<h1>belajar bareng wpu 👌</h1>)
+    </script>
+
+    <!-- pakai DOM -->
+    <!-- <script>
+        
+        const app = document.getElementById('app')
+        const header = document.createElement('h1')
+        const headerContent = document.createTextNode('belajar bareng wpu')
+        
+        //append teks ke dalam h1
+        header.appendChild(headerContent)
+        //simpan elemen h1 ke dalam div
+        app.appendChild(header)
+    </script> -->
+
+   
+  </body>
+</html>

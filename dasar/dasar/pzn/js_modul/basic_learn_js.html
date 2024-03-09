@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <script type="module">
+      // import{sayHello,name,mobil} from "./library.js"
+      
+      //wrap object module
+      import * as joko from "./library.js"
+      joko.sayHello("joko");
+
+      const mobi = new joko.mobil("suzuki","sedan")
+      mobi.say()
+
+      console.info(joko.name);
+    </script>
+  </body>
+</html>
